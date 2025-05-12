@@ -11,6 +11,17 @@
 \usepackage{diagbox}
 \usepackage{minted}
 \usepackage{titlesec}                                   %设置章节格式
+
+% 设置 paragraph 为只有一级编号（从1开始）
+\renewcommand{\theparagraph}{\arabic{paragraph}} % 只显示一级编号
+\makeatletter
+\@addtoreset{paragraph}{section} % 每节开始时重置 paragraph 计数器
+\makeatother
+
+% 设置 paragraph 的格式为：1. 标题
+\titleformat{\paragraph}[runin]
+  {}{}{0pt}{\theparagraph. }
+  
 \usepackage{enumerate}                                 	%更改enumerate环境格式
 \usepackage{hyperref}
 
