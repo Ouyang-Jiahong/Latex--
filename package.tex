@@ -18,9 +18,12 @@
 \@addtoreset{paragraph}{section} % 每节开始时重置 paragraph 计数器
 \makeatother
 
-% 设置 paragraph 的格式为：1. 标题
-\titleformat{\paragraph}[runin]
-  {}{}{0pt}{\theparagraph. }
+% 设置 paragraph 为 block 风格，自动换行
+\titleformat{\paragraph}[block]
+  {\normalfont\normalsize\bfseries}{\theparagraph.}{0.5em}{}
+
+% 设置标题后换行（after-sep 设为 \newline）
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0pt}
   
 \usepackage{enumerate}                                 	%更改enumerate环境格式
 \usepackage{hyperref}
