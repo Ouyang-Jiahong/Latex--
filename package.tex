@@ -21,12 +21,27 @@
 \usepackage{diagbox}
 \usepackage{minted}
 \usepackage{titlesec}                                   %设置章节格式
+\usepackage{tcolorbox}
 
 % 设置 paragraph 为只有一级编号（从1开始）
 \renewcommand{\theparagraph}{\arabic{paragraph}} % 只显示一级编号
 \makeatletter
 \@addtoreset{paragraph}{section} % 每节开始时重置 paragraph 计数器
 \makeatother
+
+%%文本框设置
+\newcommand{\tbox}[1]{
+  \begin{center}
+    \begin{tcolorbox}[colback=gray!10,%gray background
+        colframe=black,% black frame colour
+        width=14cm,% Use 8cm total width,
+        arc=1mm, auto outer arc,
+        boxrule=0.5pt,
+      ]
+      {#1}
+    \end{tcolorbox}
+  \end{center}
+}
 
 % 设置 paragraph 为 block 风格，自动换行
 \titleformat{\paragraph}[block]
